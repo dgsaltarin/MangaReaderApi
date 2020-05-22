@@ -12,31 +12,32 @@ public class ArtistDaoImplement extends AbstractSession implements ArtistDao {
 
     @Override
     public List<Artist> findAllArtist() {
-        return null;
+        return getSession().createQuery("from Artist").list();
     }
 
     @Override
     public Artist findArtistById(int idArtist) {
-        return null;
+        return getSession().get(Artist.class, idArtist);
     }
 
     @Override
     public Artist findArtistByName(String name) {
-        return null;
+        return (Artist) getSession().createQuery("from Artist where name = :name")
+                .setParameter("name", name).uniqueResult();
     }
 
     @Override
     public void updateArtist(Artist artist) {
-
+        getSession().update(artist);
     }
 
     @Override
     public void saveArtist(Artist artist) {
-
+        getSession().persist(artist);
     }
 
     @Override
     public void deleteArtist(int idArtist) {
-
+        getSession().delete(idArtist);
     }
 }
