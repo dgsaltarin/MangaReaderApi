@@ -34,4 +34,9 @@ public class MangaServiceImplement implements MangaService {
     public Manga findMangaByName(String name) {
         return _mangaDao.findMangaByName(name);
     }
+
+    @Override
+    public Manga findRandomManga() {
+        return _mangaDao.findRandomManga();
+    }
 }

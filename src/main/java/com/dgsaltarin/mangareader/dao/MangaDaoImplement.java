@@ -5,6 +5,7 @@ import org.springframework.stereotype.Repository;
 
 import javax.transaction.Transactional;
 import java.util.List;
+import java.util.Random;
 
 @Repository
 @Transactional
@@ -29,5 +30,12 @@ public class MangaDaoImplement extends AbstractSession implements MangaDao {
     public Manga findMangaByName(String name) {
         return (Manga) getSession().createQuery("from Manga  where name = :name")
                 .setParameter("name", name).uniqueResult();
+    }
+
+    @Override
+    public Manga findRandomManga() {
+        List<Manga> mangaList = getSession().createQuery("from Manga").list();
+        Random random = new Random();
+        return mangaList.get(random.nextInt(mangaList.size()));
     }
 }

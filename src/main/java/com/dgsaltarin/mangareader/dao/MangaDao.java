@@ -13,4 +13,6 @@ public interface MangaDao {
     List<String> findAllMangasName();
 
     Manga findMangaByName(String name);
+
+    Manga findRandomManga();
 }

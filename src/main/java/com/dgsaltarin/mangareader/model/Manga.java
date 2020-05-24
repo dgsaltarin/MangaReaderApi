@@ -18,6 +18,18 @@ public class Manga {
     private Artist artist;
     private List<Tag> tags;
 
+    public Manga() {
+    }
+
+    public Manga(int idManga, String name, String description, Integer chapters, Byte status, String cover) {
+        this.idManga = idManga;
+        this.name = name;
+        this.description = description;
+        this.chapters = chapters;
+        this.status = status;
+        this.cover = cover;
+    }
+
     @Id
     @Column(name = "id_manga")
     @GeneratedValue(strategy = GenerationType.IDENTITY)

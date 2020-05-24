@@ -24,9 +24,7 @@ public class MangaController {
     @RequestMapping(value = "/manga", method = RequestMethod.GET)
     public ResponseEntity<List<Manga>> getAllMangas(){
         List<Manga> mangas;
-
         mangas = _mangaService.findAllMangas();
-
         if (mangas.isEmpty())
             return new ResponseEntity(new CustomErrorType("No mangas found"), HttpStatus.NO_CONTENT);
 
@@ -35,7 +33,7 @@ public class MangaController {
 
     //GET MANDA BY ID
     @RequestMapping(value = "/manga/{id}", method = RequestMethod.GET, headers = "Accept-application/json")
-    public ResponseEntity<Manga> getMangaById(@PathVariable("idManga") int idManga){
+    public ResponseEntity<Manga> getMangaById(@PathVariable("id") int idManga){
         Manga manga;
         if (idManga<=0)
             return new ResponseEntity(new CustomErrorType("id_manga is required"), HttpStatus.NO_CONTENT);
@@ -44,6 +42,13 @@ public class MangaController {
         if (manga==null)
             return new ResponseEntity(new CustomErrorType("Not manga found"), HttpStatus.NOT_FOUND);
 
+        return new ResponseEntity<Manga>(manga, HttpStatus.OK);
+    }
+
+    //GET RANDOM MANGA
+    @RequestMapping(value = "/manga/random", method = RequestMethod.GET, headers = "Accept=application/json")
+    public ResponseEntity<Manga> getRandomManga(){
+        Manga manga = _mangaService.findRandomManga();
         return new ResponseEntity<Manga>(manga, HttpStatus.OK);
     }
 }

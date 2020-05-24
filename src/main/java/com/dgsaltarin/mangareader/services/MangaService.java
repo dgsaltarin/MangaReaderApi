@@ -13,4 +13,6 @@ public interface MangaService {
     List<String> findAllMangasName();
 
     Manga findMangaByName(String name);
+
+    Manga findRandomManga();
 }

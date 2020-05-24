@@ -1,6 +1,7 @@
 package com.dgsaltarin.mangareader.model;
 
 import javax.persistence.*;
+import java.sql.Timestamp;
 import java.util.Objects;
 
 @Entity
@@ -8,6 +9,7 @@ import java.util.Objects;
 public class Chapter {
     private int idChapter;
     private Integer pages;
+    private Timestamp date;
     private Manga manga;
 
     @Id
@@ -29,6 +31,16 @@ public class Chapter {
 
     public void setPages(Integer pages) {
         this.pages = pages;
+    }
+
+    @Basic
+    @Column(name = "date")
+    public Timestamp getDate() {
+        return date;
+    }
+
+    public void setDate(Timestamp date) {
+        this.date = date;
     }
 
     @ManyToOne(optional = true, fetch = FetchType.EAGER)
