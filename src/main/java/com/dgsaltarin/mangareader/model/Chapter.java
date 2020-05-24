@@ -10,7 +10,17 @@ public class Chapter {
     private int idChapter;
     private Integer pages;
     private Timestamp date;
+    private int chapterNumber;
     private Manga manga;
+
+    public Chapter() {
+    }
+
+    public Chapter(int idChapter, Integer pages, Timestamp date) {
+        this.idChapter = idChapter;
+        this.pages = pages;
+        this.date = date;
+    }
 
     @Id
     @Column(name = "id_chapter")
@@ -41,6 +51,16 @@ public class Chapter {
 
     public void setDate(Timestamp date) {
         this.date = date;
+    }
+
+    @Basic
+    @Column(name = "chapter_number")
+    public int getChapterNumber() {
+        return chapterNumber;
+    }
+
+    public void setChapterNumber(int chapterNumber) {
+        this.chapterNumber = chapterNumber;
     }
 
     @ManyToOne(optional = true, fetch = FetchType.EAGER)

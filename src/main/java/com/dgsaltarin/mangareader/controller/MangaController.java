@@ -1,5 +1,6 @@
 package com.dgsaltarin.mangareader.controller;
 
+import com.dgsaltarin.mangareader.model.Chapter;
 import com.dgsaltarin.mangareader.model.Manga;
 import com.dgsaltarin.mangareader.services.MangaService;
 import com.dgsaltarin.mangareader.util.CustomErrorType;
@@ -50,5 +51,19 @@ public class MangaController {
     public ResponseEntity<Manga> getRandomManga(){
         Manga manga = _mangaService.findRandomManga();
         return new ResponseEntity<Manga>(manga, HttpStatus.OK);
+    }
+
+    //GET ALL MANGA'S CHAPTERS
+    @RequestMapping(value = "manga/{id}/chapters", method = RequestMethod.GET, headers = "Accept=application/json")
+    public ResponseEntity<List<Chapter>> getAllMangaChapters(@PathVariable("id") int idManga){
+        if (idManga<=0)
+            return new ResponseEntity(new CustomErrorType("idManga id required"), HttpStatus.NO_CONTENT);
+
+        Manga manga = _mangaService.findMangaById(idManga);
+        if (manga==null)
+            return new ResponseEntity(new CustomErrorType("Manga not found"), HttpStatus.NOT_FOUND);
+
+        List<Chapter> chapters = _mangaService.findAllChapter(idManga);
+        return new ResponseEntity<List<Chapter>>(chapters, HttpStatus.OK);
     }
 }

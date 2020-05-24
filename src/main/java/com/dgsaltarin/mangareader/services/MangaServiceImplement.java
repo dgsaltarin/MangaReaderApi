@@ -1,6 +1,7 @@
 package com.dgsaltarin.mangareader.services;
 
 import com.dgsaltarin.mangareader.dao.MangaDao;
+import com.dgsaltarin.mangareader.model.Chapter;
 import com.dgsaltarin.mangareader.model.Manga;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -38,5 +39,15 @@ public class MangaServiceImplement implements MangaService {
     @Override
     public Manga findRandomManga() {
         return _mangaDao.findRandomManga();
+    }
+
+    @Override
+    public List<Chapter> findAllChapter(int idManga) {
+        return _mangaDao.findAllChapter(idManga);
+    }
+
+    @Override
+    public Chapter getChapter(int idChapter) {
+        return _mangaDao.getChapter(idChapter);
     }
 }

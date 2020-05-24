@@ -1,11 +1,11 @@
-package com.dgsaltarin.mangareader.dao;
+package com.dgsaltarin.mangareader.services;
 
 import com.dgsaltarin.mangareader.model.Chapter;
 import com.dgsaltarin.mangareader.model.Page;
 
 import java.util.List;
 
-public interface ChapterDao {
+public interface ChapterService {
 
     Chapter getChapter(int idChapter);
 

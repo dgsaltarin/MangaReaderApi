@@ -1,5 +1,6 @@
 package com.dgsaltarin.mangareader.dao;
 
+import com.dgsaltarin.mangareader.model.Chapter;
 import com.dgsaltarin.mangareader.model.Manga;
 import org.springframework.stereotype.Repository;
 
@@ -37,5 +38,16 @@ public class MangaDaoImplement extends AbstractSession implements MangaDao {
         List<Manga> mangaList = getSession().createQuery("from Manga").list();
         Random random = new Random();
         return mangaList.get(random.nextInt(mangaList.size()));
+    }
+
+    @Override
+    public List<Chapter> findAllChapter(int idManga) {
+        return getSession().createQuery("from Chapter where manga.idManga = :idManga")
+                .setParameter("idManga", idManga).list();
+    }
+
+    @Override
+    public Chapter getChapter(int idChapter) {
+        return getSession().get(Chapter.class, idChapter);
     }
 }
