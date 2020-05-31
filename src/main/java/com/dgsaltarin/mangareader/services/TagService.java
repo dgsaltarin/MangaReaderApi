@@ -1,11 +1,12 @@
-package com.dgsaltarin.mangareader.dao;
+package com.dgsaltarin.mangareader.services;
 
 import com.dgsaltarin.mangareader.model.Manga;
 import com.dgsaltarin.mangareader.model.Tag;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-public interface TagDao {
+public interface TagService {
 
     List<Tag> getAllTags();
 

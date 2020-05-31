@@ -75,7 +75,6 @@ public class MangaController {
     }
 
     //GET ALL MANGAS PREVIEW
-
     @RequestMapping(value = "/mangaPreviews", method = RequestMethod.GET, headers = "Accept=application/json")
     public ResponseEntity<List<Preview>> getAllMangasPreview(){
         List<Manga> allMangas = _mangaService.findAllMangas();
@@ -86,6 +85,7 @@ public class MangaController {
         return new ResponseEntity<List<Preview>>(previews, HttpStatus.OK);
     }
 
+    //GET A MANGA'S CHAPTER PREVIEW
     @RequestMapping(value = "/manga/{id_manga}/chaptersPreview", method = RequestMethod.GET, headers = "Accept=application/json")
     public ResponseEntity<List<Preview>> getAllChapterPreview(@PathVariable("id_manga") int mangaId){
         if (mangaId<=0)

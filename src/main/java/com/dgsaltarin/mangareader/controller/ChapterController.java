@@ -32,6 +32,7 @@ public class ChapterController {
     @Autowired
     private PreviewService _previewService;
 
+    //GET CHAPTER BY ID
     @RequestMapping(value = "/manga/{id_manga}/{id_chapter}", method = RequestMethod.GET,
             headers = "Accept=application/json")
     public ResponseEntity<Chapter> getMangaChapter(@PathVariable("id_manga") int idManga,
