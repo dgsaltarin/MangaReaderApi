@@ -20,4 +20,14 @@ public class ChapterDaoImplement extends AbstractSession implements ChapterDao{
     public Page getChapterPage(int idPage) {
         return null;
     }
+
+    @Override
+    public List<Page> getAllPages(int idChapter) {
+        return null;
+    }
+
+    @Override
+    public String getChapterFirstPage(int idChapter) {
+        return null;
+    }
 }
