@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 @RequestMapping("v1")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = {"http://localhost:4200", "https://dgmanga-572c3.web.app"})
 public class PageController {
 
     @Autowired
