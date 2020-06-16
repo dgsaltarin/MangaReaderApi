@@ -1,2 +1,2 @@
 # MangaReaderApi
-Spring boot api for manga reader web application
+API REST developed using spring boot, for a manga reader web application
