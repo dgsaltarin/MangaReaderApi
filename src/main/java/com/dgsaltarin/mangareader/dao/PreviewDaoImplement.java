@@ -59,7 +59,7 @@ public class PreviewDaoImplement extends AbstractSession implements PreviewDao {
         List<Preview> previews = new ArrayList<>();
         for (int i=1; i<chapter.getPages()+1;i++){
             Page pageUrl = _pageDao.getPageUrl(chapter.getManga().getName(), chapter.getChapterNumber(), i);
-            Preview preview = new Preview(String.valueOf(chapter.getChapterNumber()),
+            Preview preview = new Preview(String.valueOf(i),
                     pageUrl.getPageUrl(),
                     i,
                     LINK + chapter.getManga().getName() +"/" +chapter.getIdChapter()+"/"

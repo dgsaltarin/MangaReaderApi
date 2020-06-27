@@ -22,8 +22,7 @@ public class Manga {
     public Manga() {
     }
 
-    public Manga(int idManga, String name, String description, Integer chapters, Byte status, String cover,
-                 List<Tag> tags) {
+    public Manga(int idManga, String name, String description, Integer chapters, Byte status, String cover) {
         this.idManga = idManga;
         this.name = name;
         this.description = description;
