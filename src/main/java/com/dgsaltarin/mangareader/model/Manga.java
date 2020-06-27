@@ -1,6 +1,7 @@
 package com.dgsaltarin.mangareader.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
 import java.util.List;
@@ -21,13 +22,15 @@ public class Manga {
     public Manga() {
     }
 
-    public Manga(int idManga, String name, String description, Integer chapters, Byte status, String cover) {
+    public Manga(int idManga, String name, String description, Integer chapters, Byte status, String cover,
+                 List<Tag> tags) {
         this.idManga = idManga;
         this.name = name;
         this.description = description;
         this.chapters = chapters;
         this.status = status;
         this.cover = cover;
+        this.tags = tags;
     }
 
     @Id
@@ -111,8 +114,10 @@ public class Manga {
         this.artist = artist;
     }
 
-    @ManyToMany(cascade = CascadeType.ALL)
-    @JsonIgnore
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JsonManagedReference
+    @JoinTable(name = "manga_tag", joinColumns = @JoinColumn(name = "id_manga"),
+    inverseJoinColumns = @JoinColumn(name = "id_tag"))
     public List<Tag> getTags() {
         return tags;
     }

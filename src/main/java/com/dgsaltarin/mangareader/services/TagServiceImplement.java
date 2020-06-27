@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service("tagService")
-public class TagImplementService implements TagService {
+public class TagServiceImplement implements TagService {
 
     @Autowired
     private TagDao _tagDao;

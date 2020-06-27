@@ -28,6 +28,8 @@ public class MangaController {
     @Autowired
     private PreviewService _previewService;
 
+    @Autowired
+
     //GET ALL MANGAS
     @RequestMapping(value = "/manga", method = RequestMethod.GET)
     public ResponseEntity<List<Manga>> getAllMangas(){

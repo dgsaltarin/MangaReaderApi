@@ -2,6 +2,7 @@ package com.dgsaltarin.mangareader.dao;
 
 import com.dgsaltarin.mangareader.model.Chapter;
 import com.dgsaltarin.mangareader.model.Manga;
+import org.hibernate.Hibernate;
 import org.springframework.stereotype.Repository;
 
 import javax.transaction.Transactional;
@@ -19,7 +20,9 @@ public class MangaDaoImplement extends AbstractSession implements MangaDao {
 
     @Override
     public Manga findMangaById(int idManga) {
-        return getSession().get(Manga.class, idManga);
+        Manga manga = getSession().get(Manga.class, idManga);
+        Hibernate.initialize(manga.getTags());
+        return manga;
     }
 
     @Override

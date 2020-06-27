@@ -1,6 +1,8 @@
 package com.dgsaltarin.mangareader.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
 import java.util.List;
@@ -34,8 +36,8 @@ public class Tag {
         this.name = name;
     }
 
-    @ManyToMany(cascade = CascadeType.PERSIST)
-    @JsonIgnore
+    @ManyToMany(mappedBy = "tags", fetch = FetchType.EAGER)
+    @JsonBackReference
     public List<Manga> getMangas() {
         return mangas;
     }
