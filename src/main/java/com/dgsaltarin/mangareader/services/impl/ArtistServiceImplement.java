@@ -1,7 +1,8 @@
-package com.dgsaltarin.mangareader.services;
+package com.dgsaltarin.mangareader.services.impl;
 
 import com.dgsaltarin.mangareader.dao.ArtistDao;
 import com.dgsaltarin.mangareader.model.Artist;
+import com.dgsaltarin.mangareader.services.ArtistService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

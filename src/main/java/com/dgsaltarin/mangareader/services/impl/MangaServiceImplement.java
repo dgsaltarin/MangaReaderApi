@@ -1,8 +1,9 @@
-package com.dgsaltarin.mangareader.services;
+package com.dgsaltarin.mangareader.services.impl;
 
 import com.dgsaltarin.mangareader.dao.MangaDao;
 import com.dgsaltarin.mangareader.model.Chapter;
 import com.dgsaltarin.mangareader.model.Manga;
+import com.dgsaltarin.mangareader.services.MangaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

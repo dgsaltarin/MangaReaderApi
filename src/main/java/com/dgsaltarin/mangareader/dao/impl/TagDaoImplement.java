@@ -1,5 +1,7 @@
-package com.dgsaltarin.mangareader.dao;
+package com.dgsaltarin.mangareader.dao.impl;
 
+import com.dgsaltarin.mangareader.dao.AbstractSession;
+import com.dgsaltarin.mangareader.dao.TagDao;
 import com.dgsaltarin.mangareader.model.Manga;
 import com.dgsaltarin.mangareader.model.Tag;
 import org.springframework.stereotype.Repository;

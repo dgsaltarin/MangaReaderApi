@@ -1,5 +1,7 @@
-package com.dgsaltarin.mangareader.dao;
+package com.dgsaltarin.mangareader.dao.impl;
 
+import com.dgsaltarin.mangareader.dao.AbstractSession;
+import com.dgsaltarin.mangareader.dao.ChapterDao;
 import com.dgsaltarin.mangareader.model.Chapter;
 import com.dgsaltarin.mangareader.model.Page;
 import org.springframework.stereotype.Repository;
@@ -9,7 +11,7 @@ import java.util.List;
 
 @Repository
 @Transactional
-public class ChapterDaoImplement extends AbstractSession implements ChapterDao{
+public class ChapterDaoImplement extends AbstractSession implements ChapterDao {
 
     @Override
     public Chapter getChapter(int idChapter) {

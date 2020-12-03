@@ -1,5 +1,7 @@
-package com.dgsaltarin.mangareader.dao;
+package com.dgsaltarin.mangareader.dao.impl;
 
+import com.dgsaltarin.mangareader.dao.AbstractSession;
+import com.dgsaltarin.mangareader.dao.ArtistDao;
 import com.dgsaltarin.mangareader.model.Artist;
 import org.springframework.stereotype.Repository;
 

@@ -1,5 +1,10 @@
-package com.dgsaltarin.mangareader.dao;
+package com.dgsaltarin.mangareader.dao.impl;
 
+import com.dgsaltarin.mangareader.dao.AbstractSession;
+import com.dgsaltarin.mangareader.dao.ChapterDao;
+import com.dgsaltarin.mangareader.dao.MangaDao;
+import com.dgsaltarin.mangareader.dao.PageDao;
+import com.dgsaltarin.mangareader.dao.PreviewDao;
 import com.dgsaltarin.mangareader.model.Chapter;
 import com.dgsaltarin.mangareader.model.Manga;
 import com.dgsaltarin.mangareader.model.Page;

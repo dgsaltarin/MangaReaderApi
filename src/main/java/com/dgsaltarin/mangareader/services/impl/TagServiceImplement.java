@@ -1,8 +1,9 @@
-package com.dgsaltarin.mangareader.services;
+package com.dgsaltarin.mangareader.services.impl;
 
 import com.dgsaltarin.mangareader.dao.TagDao;
 import com.dgsaltarin.mangareader.model.Manga;
 import com.dgsaltarin.mangareader.model.Tag;
+import com.dgsaltarin.mangareader.services.TagService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
